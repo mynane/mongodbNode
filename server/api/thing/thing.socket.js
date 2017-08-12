@@ -8,7 +8,6 @@ var thing = require('./thing.model');
 
 exports.register = function(socket) {
   thing.schema.post('save', function (doc) {
-      console.log(doc);
     onSave(socket, doc);
   });
   thing.schema.post('remove', function (doc) {
